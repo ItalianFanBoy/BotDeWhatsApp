@@ -147,4 +147,11 @@ async def run(playwright: Playwright) -> None:
                 campo3= 'Produto'
 
             
-            
+        except:
+            time.sleep(1)
+            continue 
+
+async def main() -> None:
+    async with async_playwright() as playwright:
+        await run(playwright)
+asyncio.run(main())
